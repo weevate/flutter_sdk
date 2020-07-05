@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    WeevateFlutterSdk.startWeevate;
+    WeevateFlutterSdk.initializeWeevate;
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.

@@ -47,6 +47,18 @@ public class ProductActivations {
     private int requestCode = 1;
     private String radar_api_key = "prj_live_pk_4fb9d494fd14401117079572640b88ba67819c73";
     private int small_icon;
+
+
+
+
+
+
+
+
+
+
+
+
     private ProductActivations(Context appContext){
 
         this.appContext = appContext;

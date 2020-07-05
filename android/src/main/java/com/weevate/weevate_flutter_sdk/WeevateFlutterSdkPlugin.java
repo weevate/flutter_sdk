@@ -2,6 +2,8 @@ package com.weevate.weevate_flutter_sdk;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Location;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,6 +21,11 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
 import com.productactivations.geoadsdk.AlarmReceiver;
 import com.productactivations.geoadsdk.EasyLogger;
 import com.productactivations.geoadsdk.ProductActivations;
@@ -34,6 +41,20 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
   private MethodChannel channel;
   private Context context;
   private Activity activity;
+
+
+    protected LocationRequest createLocationRequest() {
+        LocationRequest locationRequest = new LocationRequest();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setInterval(1)
+                .setFastestInterval(1)
+                .setMaxWaitTime(1)
+                .setSmallestDisplacement(1);
+
+        return locationRequest;
+    }
+
+
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "weevate_flutter_sdk");
@@ -44,14 +65,35 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
   private void setupAlarm(int seconds) {
 
-    Utility.scheduleJob(context);
+    //Utility.scheduleJob(context);
     EasyLogger.toast(context, " Set alarms");
     //context.startService(new Intent(context, WeevateService.class));
   }
 
+  int count = 0;
+  private void getLocation(){
+      EasyLogger.toast(context,"Getting locations");
+      LocationRequest mLocationRequest = createLocationRequest();
+
+      final FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(context);
+
+      mFusedLocationClient.requestLocationUpdates(
+              mLocationRequest, new LocationCallback(){
+                  @Override
+                  public void onLocationResult(LocationResult locationResult) {
+                      final Location mLastLocation = locationResult.getLastLocation();
+                      count++;
+                      EasyLogger.toast(context,  + count+ " Lat: " + mLastLocation.getLatitude() + ", long " + mLastLocation.getLongitude());
+               }
+              },
+              Looper.myLooper()
+      );
+  }
+
+
 
   public void startWeevate(){
-    setupAlarm(10);
+    //setupAlarm(10);
     //ProductActivations.getInstance(context).initialize();
    // ProductActivations.getInstance(context).onPermissionGranted();
 
@@ -79,8 +121,8 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
     }
    else if(call.method.equals("startWeevate")){
-
-      startWeevate();
+       EasyLogger.toast(context,"Calling get location");
+        getLocation();
     }
     else {
       result.notImplemented();
