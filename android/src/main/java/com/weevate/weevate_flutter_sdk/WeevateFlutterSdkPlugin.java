@@ -3,6 +3,7 @@ package com.weevate.weevate_flutter_sdk;
 import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
+import android.os.Build;
 import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
@@ -63,13 +64,6 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
   }
 
-  private void setupAlarm(int seconds) {
-
-    //Utility.scheduleJob(context);
-    EasyLogger.toast(context, " Set alarms");
-    //context.startService(new Intent(context, WeevateService.class));
-  }
-
   int count = 0;
   private void getLocation(){
       EasyLogger.toast(context,"Getting locations");
@@ -99,6 +93,15 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
   }
 
+
+  public void registerJob(){
+
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+          Utility.scheduleJob(context);
+          EasyLogger.toast(context, "Scheduled job");
+      }
+  }
+
   // This static function is optional and equivalent to onAttachedToEngine. It supports the old
   // pre-Flutter-1.12 Android projects. You are encouraged to continue supporting
   // plugin registration via this function while apps migrate to use the new Android APIs
@@ -121,8 +124,9 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
     }
    else if(call.method.equals("startWeevate")){
-       EasyLogger.toast(context,"Calling get location");
-        getLocation();
+       EasyLogger.toast(context,"Calling register jobs");
+        registerJob();
+
     }
     else {
       result.notImplemented();
