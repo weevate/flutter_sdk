@@ -12,12 +12,8 @@ class WeevateFlutterSdk {
   }
 
 
-  static Future<String> get startWeevate async {
-    await _channel.invokeMethod('startWeevate');
-  }
 
-
-  static Future<String> get initializeWeevate async {
+  static Future<void> get initializeWeevate async {
 
     Location location = new Location();
 

@@ -19,13 +19,14 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.weevate.weevate_flutter_sdk.R;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Random;
-import com.weevate.weevate_flutter_sdk.R;
 
 public class SendNotification  extends AsyncTask<String, Void, Bitmap> {
 
@@ -135,7 +136,7 @@ public class SendNotification  extends AsyncTask<String, Void, Bitmap> {
         NotificationManager mNotificationManager;
 
         mBuilder = new NotificationCompat.Builder(ctx);
-        mBuilder.setSmallIcon(R.drawable.weevate_36_36);
+        mBuilder.setSmallIcon(R.drawable.common_google_signin_btn_icon_dark);
         mBuilder.setContentTitle(notification.subject)
                 .setLargeIcon(largeIcon)
                 .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(largeIcon))

@@ -81,11 +81,6 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
 
         private void doJob(){
             String jsonData = "";
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                // performPostCall("api/v1/geofences/get_geofence", jsonData);
-            }
-
-          //  EasyLogger.toast(this, "Started service ");
 
             LocationRequest mLocationRequest = createLocationRequest();
 
@@ -93,7 +88,7 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
 
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-
+            EasyLogger.toast(getApplicationContext(), "Rqustd location");
             mFusedLocationClient.requestLocationUpdates(
                     mLocationRequest, new LocationCallback(){
                         @Override
@@ -102,7 +97,7 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
 
                             mLastLocation = locationResult.getLastLocation();
 
-                          //  EasyLogger.toast(GeoJobService.this,  "Your location: lat  " + mLastLocation.getLatitude() + ",  long: "+ mLastLocation.getLongitude());
+                           EasyLogger.toast(getApplicationContext(),  "Your location: lat  " + mLastLocation.getLatitude() + ",  long: "+ mLastLocation.getLongitude());
 
                             String json = "{ \n" +
                                     "\"Latitude\":\""+mLastLocation.getLatitude()+"\",\n" +
@@ -440,7 +435,7 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
         URL url;
         String resp = "";
         try {
-            url = new URL(requestURL);
+            url = new URL( requestURL);
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(15000);
@@ -449,10 +444,6 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
             conn.setRequestProperty("Content-Type", "application/json; utf-8");
 
             conn.setRequestProperty("Accept", "application/json");
-
-
-
-
 
             conn.setDoInput(true);
             conn.setDoOutput(true);

@@ -53,8 +53,7 @@ public class ProductActivations {
 
     }
 
-    public void initialize(Activity activity, String fcm_token){
-        ensureLocationEnabled(activity);
+    public void initialize(Activity activity){
         this.small_icon = small_icon;
         String packageName  = this.appContext.getPackageName();
 
@@ -101,7 +100,7 @@ public class ProductActivations {
             catch(Exception es){
                 EasyLogger.toast(appContext, "Error starting job  " + es.getMessage());
             }
-            EasyLogger.toast(appContext,"Started scheduler");
+//            EasyLogger.toast(appContext,"Started scheduler");
         }
 
 
@@ -196,7 +195,7 @@ public class ProductActivations {
                 System.out.println(response.toString());
                 resp = response.toString();
 
-                Log.d("Result from posting ", resp);
+               // Log.d("Result from posting ", resp);
             }
 
         } catch (Exception e) {

@@ -16,6 +16,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -34,7 +36,7 @@ import com.productactivations.geoadsdk.Utility;
 import com.productactivations.geoadsdk.WeevateService;
 
 /** WeevateFlutterSdkPlugin */
-public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler {
+public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -44,16 +46,7 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
   private Activity activity;
 
 
-    protected LocationRequest createLocationRequest() {
-        LocationRequest locationRequest = new LocationRequest();
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setInterval(1)
-                .setFastestInterval(1)
-                .setMaxWaitTime(1)
-                .setSmallestDisplacement(1);
 
-        return locationRequest;
-    }
 
 
   @Override
@@ -64,32 +57,11 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
   }
 
-  int count = 0;
-  private void getLocation(){
-      EasyLogger.toast(context,"Getting locations");
-      LocationRequest mLocationRequest = createLocationRequest();
-
-      final FusedLocationProviderClient mFusedLocationClient = LocationServices.getFusedLocationProviderClient(context);
-
-      mFusedLocationClient.requestLocationUpdates(
-              mLocationRequest, new LocationCallback(){
-                  @Override
-                  public void onLocationResult(LocationResult locationResult) {
-                      final Location mLastLocation = locationResult.getLastLocation();
-                      count++;
-                      EasyLogger.toast(context,  + count+ " Lat: " + mLastLocation.getLatitude() + ", long " + mLastLocation.getLongitude());
-               }
-              },
-              Looper.myLooper()
-      );
-  }
-
-
 
   public void startWeevate(){
-    //setupAlarm(10);
-    //ProductActivations.getInstance(context).initialize();
-   // ProductActivations.getInstance(context).onPermissionGranted();
+
+    ProductActivations.getInstance(context).initialize(activity);
+    registerJob();
 
   }
 
@@ -114,6 +86,7 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "weevate_flutter_sdk");
     channel.setMethodCallHandler(new WeevateFlutterSdkPlugin());
+
   }
 
   @Override
@@ -124,8 +97,8 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
     }
    else if(call.method.equals("startWeevate")){
-       EasyLogger.toast(context,"Calling register jobs");
-        registerJob();
+       EasyLogger.toast(context,"Starting Weevate");
+        startWeevate();
 
     }
     else {
@@ -137,4 +110,26 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
     channel.setMethodCallHandler(null);
   }
+
+    @Override
+    public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+        EasyLogger.toast(context,"Attachd to activity");
+        activity = binding.getActivity();
+
+    }
+
+    @Override
+    public void onDetachedFromActivityForConfigChanges() {
+
+    }
+
+    @Override
+    public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
+
+    }
+
+    @Override
+    public void onDetachedFromActivity() {
+
+    }
 }
