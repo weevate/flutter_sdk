@@ -23,13 +23,13 @@ public class EasyLogger {
 
     public static void log(String message){
 
-        Log.d(TAG, message);
+        //Log.d(TAG, message);
     }
 
     public static void toast(Context context, String message){
         //save(message, context);
       //  Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-        Log.d("Weevate Sdk "+ String.valueOf(context), message);
+       // Log.d("Weevate Sdk "+ String.valueOf(context), message);
     }
 
     public static void saveForViewing(Context context, String message){

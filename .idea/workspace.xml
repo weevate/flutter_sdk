@@ -6,122 +6,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45ac212b-2cfb-4b89-9d4c-4682b8999e55" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/EasyLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/EasyLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/GeoJobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/GeoJobService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/GeofenceBroadcastReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/GeofenceBroadcastReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/ProductActivations.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/ProductActivations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/SendNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/productactivations/geoadsdk/SendNotification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/weevate/weevate_flutter_sdk/WeevateFlutterSdkPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/weevate/weevate_flutter_sdk/WeevateFlutterSdkPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/.metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/java/com/weevate/weevate_flutter_sdk_example/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/consumer-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/androidTest/java/com/productactivations/geoadsdk/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/ActivationsResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/AlarmReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/DelayedLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/EasyLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/GeoJobService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/GeoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/GeofenceBroadcastReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/HttpService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/MVideoView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/MyAccessibilityService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/PLocation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/ProductActivations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/SdkNotification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/SdkNotificationResultListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/SdkService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/SendNotification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/Utility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/java/com/productactivations/geoadsdk/WeevateService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable-v24/error.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable-v24/loader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable-v24/loading_two.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable-v24/logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable-v24/long_logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable-v24/splash.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/error.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/weevate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/weevate72_72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/weevate_36_36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/weevate_48_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/main/res/drawable/weevate_96_96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/geoadsdk/src/test/java/com/productactivations/geoadsdk/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Flutter/Debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Flutter/Release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/AppDelegate.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/AppDelegate.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/ios/Runner/main.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/lib/main.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/pubspec.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_copy/test/widget_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/weevate_flutter_sdk.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/weevate_flutter_sdk.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weevate_flutter_sdk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weevate_flutter_sdk.iml" afterDir="false" />
     </list>
@@ -142,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">

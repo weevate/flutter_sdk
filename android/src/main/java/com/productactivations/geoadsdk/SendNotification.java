@@ -27,6 +27,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Random;
+import com.weevate.weevate_flutter_sdk.R;
 
 public class SendNotification  extends AsyncTask<String, Void, Bitmap> {
 
@@ -136,7 +137,8 @@ public class SendNotification  extends AsyncTask<String, Void, Bitmap> {
         NotificationManager mNotificationManager;
 
         mBuilder = new NotificationCompat.Builder(ctx);
-        mBuilder.setSmallIcon(R.drawable.common_google_signin_btn_icon_dark);
+        int smallIcon = android.R.drawable.ic_menu_mylocation;
+        mBuilder.setSmallIcon(smallIcon);
         mBuilder.setContentTitle(notification.subject)
                 .setLargeIcon(largeIcon)
                 .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(largeIcon))

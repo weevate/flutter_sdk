@@ -16,10 +16,16 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //    Toast.makeText(context,  "Started Weevate", Toast.LENGTH_LONG).show();
-                Utility.scheduleJob(context);
-                EasyLogger.toast(context, "Started weevate after boot");
+
+            try {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    //    Toast.makeText(context,  "Started Weevate", Toast.LENGTH_LONG).show();
+                    Utility.scheduleJob(context);
+                    EasyLogger.toast(context, "Started weevate after boot");
+                }
+            }
+            catch(Exception es){
+
             }
         }
 

@@ -60,9 +60,15 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
         public boolean onStartJob(JobParameters params) {
             this.params = params;
             EasyLogger.toast(getApplicationContext(), "Started execution of job");
-            doJob();
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                Utility.scheduleJob(getApplicationContext()); // reschedule the job
+
+            try {
+                doJob();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Utility.scheduleJob(getApplicationContext()); // reschedule the job
+                }
+            }
+            catch(Exception es){
+
             }
             return true;
         }
@@ -83,9 +89,6 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
             String jsonData = "";
 
             LocationRequest mLocationRequest = createLocationRequest();
-
-
-
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
             EasyLogger.toast(getApplicationContext(), "Rqustd location");
@@ -313,8 +316,13 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
     }
 
     public void finishJob(){
-        EasyLogger.toast(getApplicationContext(), "Finished job");
-        this.jobFinished(this.params, true);
+        try {
+            EasyLogger.toast(getApplicationContext(), "Finished job");
+            this.jobFinished(this.params, true);
+        }
+        catch(Exception es){
+
+        }
     }
 
 
@@ -355,7 +363,6 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
                 loc.radius = 100;
             }
 
-            loc.radius =5;
 
             geofenceList.add(new Geofence.Builder()
                     // Set the request ID of the geofence. This is a string to identify this
@@ -379,20 +386,22 @@ public class GeoJobService extends JobService implements SdkNotificationResultLi
 
     @Override
     public void onNotificationNotSent(){
-
+    try {
         EasyLogger.toast(getApplicationContext(), "Notification not sent " + nearbyNotifications.data[0].notifications.length);
-        attemptsToSendNotification+=1;
+        attemptsToSendNotification += 1;
 
-        EasyLogger.toast(getApplicationContext(), "Attempts " + attemptsToSendNotification + ", length "+ nearbyNotifications.data[0].notifications.length);
-        if(nearbyNotifications.data[0].notifications.length > attemptsToSendNotification){
+        EasyLogger.toast(getApplicationContext(), "Attempts " + attemptsToSendNotification + ", length " + nearbyNotifications.data[0].notifications.length);
+        if (nearbyNotifications.data[0].notifications.length > attemptsToSendNotification) {
             EasyLogger.toast(getApplicationContext(), "Delivered this note before; unto the next");
             registerNextNotification(nearbyNotifications, mLastLocation);
-        }        
-
-        else{
+        } else {
             finishJob();
             EasyLogger.toast(getApplicationContext(), "No more nearby locations");
         }
+    }
+    catch(Exception es){
+
+    }
     }
 
 

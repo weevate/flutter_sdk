@@ -36,7 +36,7 @@ import com.productactivations.geoadsdk.Utility;
 import com.productactivations.geoadsdk.WeevateService;
 
 /** WeevateFlutterSdkPlugin */
-public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
+public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -47,20 +47,25 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
 
 
 
-
-
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "weevate_flutter_sdk");
+      Log.d(TAG, "Actual onattachedtoEngine");
+      channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "weevate_flutter_sdk");
     channel.setMethodCallHandler(this);
     context = flutterPluginBinding.getApplicationContext();
 
   }
 
 
-  public void startWeevate(){
+  public void onAttachedToEngine(Context context, Activity activity){
+      Log.d(TAG, "custom on attached to engine");
+      this.context = context;
+      this.activity = activity;
+  }
 
-    ProductActivations.getInstance(context).initialize(activity);
+  public void startWeevate(Context ctx){
+    Log.d(TAG, "Start weevate");
+    ProductActivations.getInstance(ctx).initialize();
     registerJob();
 
   }
@@ -83,14 +88,24 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
   // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
   // depending on the user's project. onAttachedToEngine or registerWith must both be defined
   // in the same class.
+
+    String TAG  = "WEEVATE";
   public static void registerWith(Registrar registrar) {
+
+      Log.d("WEEVATE", "Register with");
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "weevate_flutter_sdk");
-    channel.setMethodCallHandler(new WeevateFlutterSdkPlugin());
+    WeevateFlutterSdkPlugin plugin = new WeevateFlutterSdkPlugin();
+    plugin.onAttachedToEngine(registrar.context(), registrar.activity());
+    channel.setMethodCallHandler(plugin);
 
   }
 
+
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
+
+      Log.d(TAG, "on method call");
+
     if (call.method.equals("getPlatformVersion")) {
 
       result.success("Android " + android.os.Build.VERSION.RELEASE);
@@ -98,7 +113,7 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
     }
    else if(call.method.equals("startWeevate")){
        EasyLogger.toast(context,"Starting Weevate");
-        startWeevate();
+        startWeevate(context);
 
     }
     else {
@@ -111,25 +126,5 @@ public class WeevateFlutterSdkPlugin implements FlutterPlugin, MethodCallHandler
     channel.setMethodCallHandler(null);
   }
 
-    @Override
-    public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
-        EasyLogger.toast(context,"Attachd to activity");
-        activity = binding.getActivity();
 
-    }
-
-    @Override
-    public void onDetachedFromActivityForConfigChanges() {
-
-    }
-
-    @Override
-    public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
-
-    }
-
-    @Override
-    public void onDetachedFromActivity() {
-
-    }
 }
